@@ -1,13 +1,12 @@
 import React from 'react'
+import ModifierButtons from './ModifierButtons'
 
 const AnswerCard = () => {
   return (
-    <div className='card w-auto h-fit bg-accent text-accent-content shadow-xl'>
-        <p className='card-body text-center text-4xl'>Answer Placeholder Text</p>
-        <div className='grid p-2 gap-2 grid-cols-2'>
-            <button className='btn-success rounded-lg text-2xl font-medium p-2 hover:bg-[#5ab9a1]'>Point</button>
-            <button className='btn-error rounded-lg text-2xl font-medium p-2 hover:bg-[#ad1423]'>Black Sheep</button>
-        </div>
+    <div className='relative card w-fit h-fit bg-accent text-accent-content shadow-xl'>
+        <div className='absolute w-6 h-6 bg-[#5ab9a1] rounded-full left-1/2 transform -translate-x-1/2 -top-3 invisible'></div>
+        <p className='card-body text-center text-4xl'>Super duper long text</p>
+        <ModifierButtons />
     </div>
   )
 }
