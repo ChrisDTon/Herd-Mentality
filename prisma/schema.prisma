@@ -11,12 +11,21 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  score Int     
-  name  String?
+  idUser Int     @id @default(autoincrement())
+  score  Int
+  name   String?
+  Round  Round[]
 }
 
 model Prompt {
-  id    Int     @id @default(autoincrement())
-  text  String? @unique
+  idPromt Int     @id @default(autoincrement())
+  text    String? @unique
+}
+
+model Round {
+  idRound  Int     @id @default(autoincrement())
+  point    Boolean @default(false)
+  bsheep   Boolean @default(false)
+  player   User    @relation(fields: [playerId], references: [idUser])
+  playerId Int
 }
