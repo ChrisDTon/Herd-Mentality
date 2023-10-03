@@ -7,7 +7,7 @@ const page = () => {
       <div className='relative'>
         <div className='card w-auto h-auto bg-neutral text-neutral-content shadow-xl'>{/* Prompt */}
           <div>
-            <p className='card-body text-center text-7xl'>Placeholder Prompt Text</p>
+            <p className='card-body text-center text-[7vh] leading-none'>Placeholder Prompt Text</p>
           </div>
         </div>
         <div className="divider"></div>
@@ -21,7 +21,7 @@ const page = () => {
           </div>
           <div className='grid grid-cols-5'>
             <div className="divider col-span-2 pt-4"></div>
-            <button type='submit' className='btn-neutral rounded-full pt-1 pb-3 text-5xl'>Apply</button>
+            <button type='submit' className='btn-neutral rounded-full pt-1 pb-3 text-[5vh] leading-none'>Apply</button>
             <div className="divider col-span-2 pt-4"></div>
           </div>
         </form>

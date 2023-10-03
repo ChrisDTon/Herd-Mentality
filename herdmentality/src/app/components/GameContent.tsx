@@ -10,7 +10,7 @@ const AnswerCard = () => {
       </div>
       <div className='grid grid-cols-5'>
         <div className="divider col-span-2 pt-4"></div>
-        <button type="submit" className='btn-neutral rounded-full pt-1 pb-3 text-5xl'>Apply</button>
+        <button type="submit" className='btn-neutral rounded-full pt-1 pb-3 text-[5vh] leading-none'>Apply</button>
         <div className="divider col-span-2 pt-4"></div>
       </div>
     </form>
