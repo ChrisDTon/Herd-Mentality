@@ -8,7 +8,7 @@ export default function LoginForm() {
       // mutate data
       // revalidate cache
 
-      redirect(`/game`) // Navigate to new route
+      redirect(`/game/matching`) // Navigate to new route
     }
    
     return (

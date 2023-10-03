@@ -1,5 +1,5 @@
 import React from 'react'
-import AnswerCard from '../components/AnswerCard'
+import AnswerCard from '@/app/components/AnswerCard'
 
 const page = () => {
   return (
@@ -13,7 +13,11 @@ const page = () => {
         <div className="divider"></div>
         <form>
           <div className='flex gap-3 justify-center items-center h-[50vh] max-h-[50vh]'>{/* Answers */}
-            <input type='text' className='h-[40vh] w-full'></input>
+            <AnswerCard />
+            <AnswerCard />
+            <AnswerCard />
+            <AnswerCard />
+            <AnswerCard />
           </div>
           <div className='grid grid-cols-5'>
             <div className="divider col-span-2 pt-4"></div>
