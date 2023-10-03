@@ -1,5 +1,5 @@
 import React from 'react'
-import AnswerCard from '@/app/components/AnswerCard'
+import AnswerCard from '../../components/AnswerCard'
 
 const page = () => {
   return (
@@ -8,13 +8,11 @@ const page = () => {
         className='relative'
       >
         <div 
-          className='card w-auto h-auto bg-neutral text-neutral-content shadow-xl'
+          className='card w-full h-fit bg-neutral text-neutral-content shadow-xl'
         >{/* Prompt */}
-          <div>
-            <p 
-              className='card-body text-center text-[7vh] leading-none'
-            >Placeholder Prompt Text</p>
-          </div>
+          <p 
+            className='card-body text-center text-[7vh] leading-none'
+          >Placeholder Prompt Text</p>
         </div>
         <div 
           className="divider"
@@ -23,11 +21,10 @@ const page = () => {
           <div 
             className='flex gap-3 justify-center items-center h-[50vh] max-h-[50vh]'
           >{/* Answers */}
-            <AnswerCard />
-            <AnswerCard />
-            <AnswerCard />
-            <AnswerCard />
-            <AnswerCard />
+            <input 
+              type='text' 
+              className='h-[40vh] w-full'
+            ></input>
           </div>
           <div 
             className='grid grid-cols-5'
