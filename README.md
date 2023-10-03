@@ -1,4 +1,4 @@
-# Website Workflow:
+# Website Flow:
 
 - Choose a name
 - Enter a waiting room for everyone to get in /does not stop anyone from joining later
