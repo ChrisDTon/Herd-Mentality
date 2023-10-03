@@ -18,8 +18,10 @@
 - NextAuth
 - Maven
 - Spring boot
+- Spring Data JPA
 - Prisma
 - PostgreSQL
+- RESTful API
 
 
 
@@ -49,5 +51,7 @@
 # Todo
 
 - Add session-based authentication
+- RESTful API for interaction between frontend, backend, and to ensure that all users see the same things
+- Spring Data JPA for backend to database interaction
 - Design sheep graphic
 - Make the player icon
