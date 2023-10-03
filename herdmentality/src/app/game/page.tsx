@@ -12,7 +12,7 @@ const page = () => {
         </div>
         <div className="divider"></div>
         <form>
-          <div className='flex gap-3 justify-center items-center h-[50vh] max-h-[50vh] overflow-auto'>{/* Answers */}
+          <div className='flex gap-3 justify-center items-center h-[50vh] max-h-[50vh]'>{/* Answers */}
             <AnswerCard />
             <AnswerCard />
             <AnswerCard />
