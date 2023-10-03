@@ -12,7 +12,11 @@ const page = () => {
         </div>
         <div className="divider"></div>
         <form>
-          <div className='flex gap-3 justify-center items-center flex-cols h-[50vh]'>{/* Answers */}
+          <div className='flex gap-3 justify-center items-center h-[50vh] max-h-[50vh] overflow-auto'>{/* Answers */}
+            <AnswerCard />
+            <AnswerCard />
+            <AnswerCard />
+            <AnswerCard />
             <AnswerCard />
           </div>
           <div className='grid grid-cols-5'>

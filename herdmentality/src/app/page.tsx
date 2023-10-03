@@ -6,8 +6,8 @@ import LoginForm from './components/LoginForm'
 export default function Home() {
   return (
     <>
-      <div className='relative'>
-        <h1>Login to join game</h1>
+      <div className='relative flex flex-col justify-center items-center'>
+        <h1 className='text-4xl'>Enter name to join game</h1>
         <LoginForm />
       </div>
     </>
