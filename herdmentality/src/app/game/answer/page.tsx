@@ -34,8 +34,8 @@ const page = () => {
             ></div>
             <button 
               type='submit' 
-              className='btn-neutral rounded-full pt-1 pb-3 text-[5vh] leading-none'
-            >Apply</button>
+              className='btn-neutral rounded-full py-2 text-[5vh] leading-none'
+            >Answer</button>
             <div 
               className="divider col-span-2 pt-4"
             ></div>
