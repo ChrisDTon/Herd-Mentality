@@ -15,6 +15,7 @@
 # Technologies
 
 - Next.js
+- NextAuth
 - Maven
 - Spring boot
 - Prisma
