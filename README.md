@@ -43,3 +43,11 @@
 - If everyone has a matching except one, they get a black sheep modifier
 - Only one person at a time can have a black sheep modifier
 - Black sheep modifier: Cannot win, but can still get points
+
+
+
+# Todo
+
+- Add session-based authentication
+- Design sheep graphic
+- Make the player icon
