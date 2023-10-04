@@ -1,5 +1,9 @@
 # Website Flow:
 
+- Website is designed with 16:9 ascpect ratio
+
+# Website Flow:
+
 1. Choose a name
 2. Enter a waiting room for everyone to get in /does not stop anyone from joining later
 3. Press start when everyone is in

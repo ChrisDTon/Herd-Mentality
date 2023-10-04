@@ -1,5 +1,6 @@
 import React from 'react'
 import AnswerCard from '../../components/AnswerCard'
+import PlayerCard from '@/app/components/PlayerCard'
 
 const page = () => {
   return (
@@ -15,11 +16,11 @@ const page = () => {
           >Placeholder Prompt Text</p>
         </div>
         <div 
-          className="divider"
+          className="divider my-[2vh] h-[2vh]"
         ></div>
         <form>
           <div 
-            className='flex gap-3 justify-center items-center h-[50vh] max-h-[50vh]'
+            className='flex gap-3 justify-center items-center h-[39vh] max-h-[39vh]'
           >{/* Answers */}
             <input 
               type='text' 
@@ -27,24 +28,26 @@ const page = () => {
             ></input>
           </div>
           <div 
-            className='grid grid-cols-5'
+            className='grid grid-cols-5 my-[2vh]'
           >
             <div 
-              className="divider col-span-2 pt-4"
+              className="divider my-[2vh] h-[2vh] col-span-2 pt-[0.5vh]"
             ></div>
             <button 
               type='submit' 
               className='btn-neutral rounded-full py-2 text-[5vh] leading-none'
             >Answer</button>
             <div 
-              className="divider col-span-2 pt-4"
+              className="divider my-[2vh] h-[2vh] col-span-2 pt-[0.5vh]"
             ></div>
           </div>
         </form>
         <div 
-          className='flex gap-3 flex-cols'
+          className='flex gap-3 h-[27.8vh] justify-center items-center flex-cols'
         >{/* Users and point bracket */}
-          <p>oaijoisj</p>
+          <PlayerCard />
+          <PlayerCard />
+          <PlayerCard />
         </div>
       </div>
     </>
