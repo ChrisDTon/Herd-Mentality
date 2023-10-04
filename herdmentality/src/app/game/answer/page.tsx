@@ -1,8 +1,19 @@
 import React from 'react'
+import { redirect } from 'next/navigation'
 import AnswerCard from '../../components/AnswerCard'
 import PlayerCard from '@/app/components/PlayerCard'
 
 const page = () => {
+
+  async function create(formData: FormData) {
+    'use server'
+      
+    // mutate data
+    // revalidate cache
+
+    redirect(`/game/matching/`) // Navigate to new route
+  }
+
   return (
     <>
       <div 
@@ -22,10 +33,9 @@ const page = () => {
           <div 
             className='flex gap-3 justify-center items-center h-[39vh] max-h-[39vh]'
           >{/* Answers */}
-            <input 
-              type='text' 
-              className='h-[40vh] w-full'
-            ></input>
+            <textarea 
+              className='card h-[40vh] w-[60vw] p-[2vh] text-[3.5vh] text-center'
+            ></textarea>
           </div>
           <div 
             className='grid grid-cols-5 my-[2vh]'

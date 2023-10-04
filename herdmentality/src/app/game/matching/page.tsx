@@ -1,26 +1,37 @@
 import React from 'react'
+import { redirect } from 'next/navigation'
 import AnswerCard from '@/app/components/AnswerCard'
 import PlayerCard from '@/app/components/PlayerCard'
 
 const page = () => {
+
+  async function create(formData: FormData) {
+    'use server'
+      
+    // mutate data
+    // revalidate cache
+
+    redirect(`/game/answer/`) // Navigate to new route
+  }
+
   return (
     <>
       <div 
         className='relative'
       >
         <div 
-          className='card w-full h-[14vh] bg-neutral text-neutral-content shadow-xl justify-center items-center'
+          className='card w-full h-fit bg-neutral text-neutral-content shadow-xl'
         >{/* Prompt */}
-          <div>
-            <p 
-              className='card-body text-center text-[7vh] leading-none'
-            >Placeholder Prompt Text</p>
-          </div>
+          <p 
+            className='card-body text-center text-[7vh] leading-none'
+          >Placeholder Prompt Text</p>
         </div>
         <div 
           className="divider my-[2vh] h-[2vh]"
         ></div>
-        <form>
+        <form
+          action={create}
+        >
           <div 
             className='flex gap-3 justify-center items-center h-[39vh] max-h-[39vh]'
           >{/* Answers */}
@@ -38,8 +49,8 @@ const page = () => {
             ></div>
             <button 
               type='submit' 
-              className='btn-neutral rounded-full h-[6.5vh] align-center pb-[0.8vh] text-[5vh] leading-none'
-            >Apply</button>
+              className='btn-neutral rounded-full py-[0.8vh] text-[5vh] leading-none'
+            >Answer</button>
             <div 
               className="divider my-[2vh] h-[2vh] col-span-2 pt-[0.5vh]"
             ></div>
@@ -48,6 +59,7 @@ const page = () => {
         <div 
           className='flex gap-3 h-[27.8vh] justify-center items-center flex-cols'
         >{/* Users and point bracket */}
+          <PlayerCard />
           <PlayerCard />
           <PlayerCard />
         </div>
