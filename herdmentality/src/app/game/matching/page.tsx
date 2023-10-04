@@ -38,7 +38,7 @@ const page = () => {
             ></div>
             <button 
               type='submit' 
-              className='btn-neutral rounded-full h-[6.5vh] align-center py-2 text-[5vh] leading-none'
+              className='btn-neutral rounded-full h-[6.5vh] align-center pb-[0.8vh] text-[5vh] leading-none'
             >Apply</button>
             <div 
               className="divider my-[2vh] h-[2vh] col-span-2 pt-[0.5vh]"
