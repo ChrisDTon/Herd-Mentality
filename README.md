@@ -1,3 +1,7 @@
+# To Start Website
+- npm run dev --prefix ./herdmentality
+- node server.js
+
 # Website Flow:
 
 - Website is designed with 16:9 ascpect ratio
@@ -26,6 +30,8 @@
 - Prisma
 - PostgreSQL
 - RESTful API
+- Express.js
+- Websocket
 
 
 

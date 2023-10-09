@@ -5,24 +5,36 @@ function CountdownTimer() {
   const [countdownTime, setCountdownTime] = useState(60);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCountdownTime(countdownTime - 1);
-    }, 1000);
+    const ws = new WebSocket('ws://localhost:8080');
 
-    return () => clearInterval(interval);
-  }, [countdownTime]);
+    ws.onmessage = (event) => {
+      setCountdownTime(parseInt(event.data));
+    };
+
+    return () => ws.close();
+  }, []);
 
   useEffect(() => {
     async function updateCountdown() {
-      await fetch('/api/countdown', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sec: countdownTime }),
-      });
-    }
+      try {
+        await fetch('/api/auth/countdown', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ seconds: countdownTime }),
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }    
 
     updateCountdown();
   }, [countdownTime]);
+
+  useEffect(() => {
+    if (countdownTime <= 0) {
+      window.location.href = '/game/matching/';
+    }
+  }, [countdownTime]);  
 
   return (
     <>
@@ -36,4 +48,4 @@ function CountdownTimer() {
   );
 }
 
-export default CountdownTimer
+export default CountdownTimer;
