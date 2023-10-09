@@ -6,13 +6,21 @@ function CountdownTimer() {
 
   useEffect(() => {
     const ws = new WebSocket('ws://localhost:8080');
-
+  
     ws.onmessage = (event) => {
       setCountdownTime(parseInt(event.data));
     };
-
+  
     return () => ws.close();
   }, []);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountdownTime((prevCountdownTime) => prevCountdownTime - 1);
+    }, 1000);
+  
+    return () => clearInterval(interval);
+  }, []);  
 
   useEffect(() => {
     async function updateCountdown() {
@@ -25,11 +33,11 @@ function CountdownTimer() {
       } catch (error) {
         console.error(error);
       }
-    }    
+    }
 
     updateCountdown();
   }, [countdownTime]);
-
+  
   useEffect(() => {
     if (countdownTime <= 0) {
       window.location.href = '/game/matching/';
