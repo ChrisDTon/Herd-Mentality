@@ -2,6 +2,7 @@ import React from 'react'
 import { redirect } from 'next/navigation'
 import AnswerCard from '../../components/AnswerCard'
 import PlayerCard from '@/app/components/PlayerCard'
+import CountdownTimer from '@/app/components/Countdown'
 
 const page = () => {
 
@@ -29,13 +30,16 @@ const page = () => {
         <div 
           className="divider my-[2vh] h-[2vh]"
         ></div>
-        <form>
+        <form
+          action={create}
+        >
           <div 
             className='flex gap-3 justify-center items-center h-[39vh] max-h-[39vh]'
           >{/* Answers */}
             <textarea 
               className='card h-[40vh] w-[60vw] p-[2vh] text-[3.5vh] text-center'
             ></textarea>
+            <CountdownTimer />
           </div>
           <div 
             className='grid grid-cols-5 my-[2vh]'

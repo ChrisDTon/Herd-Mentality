@@ -11,21 +11,26 @@ datasource db {
 }
 
 model User {
-  id            Int       @default(autoincrement()) @id
-  name          String?
-  score  Int     @default(0)
+  id              Int             @default(autoincrement()) @id
+  name            String?
+  score  Int      @default(0)
   Round  Round[]
 }
 
 model Prompt {
-  id      Int     @id @default(autoincrement())
+  id      Int                     @id @default(autoincrement())
   text    String? @unique
 }
 
 model Round {
-  id       Int     @id @default(autoincrement())
-  point    Boolean @default(false)
-  bsheep   Boolean @default(false)
-  player   User    @relation(fields: [playerId], references: [id])
+  id       Int                    @id @default(autoincrement())
+  point    Boolean                @default(false)
+  bsheep   Boolean                @default(false)
+  player   User                   @relation(fields: [playerId], references: [id])
   playerId Int
+}
+
+model Countdown {
+  id       Int     @id @default(autoincrement())
+  sec      Int     @default(60)
 }
