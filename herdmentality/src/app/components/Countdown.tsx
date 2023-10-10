@@ -8,19 +8,22 @@ function CountdownTimer() {
   useEffect(() => {
     console.log('useEffect establish websocket connection function called');
     const ws = new WebSocket('ws://localhost:8080');
-  
+
     ws.onmessage = (event) => {
       setCountdownTime(parseInt(event.data));
     };
-  
+
     ws.onopen = () => {
       console.log('WebSocket connection established');
       ws.send(countdownTime.toString());
     };
-  
-    return () => ws.close();
+
+    return () => {
+      console.log('Closing WebSocket connection');
+      ws.close();
+    };
   }, [countdownTime]);
-  
+
   useEffect(() => {
     console.log('useEffect lower countdown timer function called');
     const interval = setInterval(() => {
@@ -28,12 +31,10 @@ function CountdownTimer() {
         prevCountdownTime > 0 ? prevCountdownTime - 1 : prevCountdownTime
       );
     }, 1000);
-    
+
     console.log('Countdown has been lowered')
     return () => clearInterval(interval);
   }, [countdownTime]);
-  
-  
 
   useEffect(() => {
     async function updateCountdown() {
@@ -42,7 +43,7 @@ function CountdownTimer() {
         await fetch('http://localhost:3000/api/countdown', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ seconds: countdownTime }),
+          body: JSON.stringify({ seconds: countdownTime.toString() }),
         });
       } catch (error) {
         console.error(error);
@@ -51,12 +52,12 @@ function CountdownTimer() {
 
     updateCountdown();
   }, [countdownTime]);
-  
+
   useEffect(() => {
     if (countdownTime <= 0) {
       window.location.href = '/game/matching/';
     }
-  }, [countdownTime]);  
+  }, [countdownTime]);
 
   return (
     <>

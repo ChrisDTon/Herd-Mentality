@@ -6,16 +6,21 @@ wss.on('connection', (ws) => {
   console.log('Client connected');
 
   setInterval(() => {
+    console.log('Sending current countdown time to all clients')
     ws.send(countdownTime.toString());
-  }, 1000);
-});
+  }, 1000);  
 
-wss.on('message', (data) => {
-  countdownTime = data;
-  wss.clients.forEach((client) => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(countdownTime);
-    }
+  ws.on('message', (data) => {
+    console.log('Updating the current countdown timer based on data sent from client')
+    countdownTime = data;
+    var clientnumber = 0;
+    wss.clients.forEach((client) => {
+      console.log('Attempting to send updated countdown timer to all clients')
+      if (client.readyState === WebSocket.OPEN) {
+        console.log('Sending current countdown time to all clients')
+        client.send(countdownTime.toString());
+      }
+    });
   });
 });
 
