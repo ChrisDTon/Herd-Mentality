@@ -65,3 +65,6 @@
 - Spring Data JPA for backend to database interaction
 - Design sheep graphic
 - Make the player icon
+
+# Other
+- Run "netstat -ano | findstr :3001" to confirm if the server is listening on the right port

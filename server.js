@@ -1,7 +1,6 @@
 const WebSocket = require('ws');
 
 const wss = new WebSocket.Server({ port: 8080 });
-let countdownTime = 60;
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
@@ -27,6 +26,15 @@ const prisma = new PrismaClient();
 const app = express();
 
 app.use(express.json());
+app.use(express.static('public'));
+
+app.get('/api/countdown', async (req, res) => {
+  const countdown = await prisma.countdown.findUnique({
+    where: { id: 1 },
+  });
+
+  res.json(countdown);
+});
 
 app.post('/api/countdown', async (req, res) => {
   const { seconds } = req.body;
