@@ -32,6 +32,7 @@
 - RESTful API
 - Express.js
 - Websocket
+- Session-less Authentication
 
 
 
