@@ -59,13 +59,20 @@
 
 
 
+# Authetication
+
+- The website uses sessionless-based authentication, also known as token-based authentication
+- User picks a name at the start so that other players have something to identify them by and call them instead of a id or number
+- All data on the users and players are deleted when the game is over, or when they leave the website
+    - As I currently don't intend to implement a win screen or a first to x score system, the data will be deleted once they leave the website, and the game ends part will be saved for later if I do want to revisit this
+
+
+
 # Todo
 
-- Add session-based authentication
+- Add sessionless-based authentication
 - RESTful API for interaction between frontend, backend, and to ensure that all users see the same things
 - Spring Data JPA for backend to database interaction
-- Design sheep graphic
-- Make the player icon
 
 # Other
 - Run "netstat -ano | findstr :3001" to confirm if the server is listening on the right port
