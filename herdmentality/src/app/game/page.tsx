@@ -37,7 +37,7 @@ const page = () => {
             className='flex gap-3 justify-center items-center h-[39vh] max-h-[39vh]'
           >{/* Answers */}
             <span 
-              className="loading loading-ring loading-lg"
+              className="loading loading-infinity w-[20vh]"
             ></span>
           </div>
           <div 
