@@ -2,6 +2,7 @@ import React from 'react'
 import { redirect } from 'next/navigation'
 import AnswerCard from '../components/AnswerCard'
 import PlayerCard from '../components/PlayerCard'
+import { Suspense } from 'react'
 
 const page = () => {
   
@@ -57,9 +58,11 @@ const page = () => {
         <div 
           className='flex gap-3 h-[27.8vh] justify-center items-center flex-cols'
         >{/* Users and point bracket */}
-          <PlayerCard />
-          <PlayerCard />
-          <PlayerCard />
+          <Suspense fallback={<span className="loading loading-ring loading-lg"></span>}>
+            <PlayerCard />
+            <PlayerCard />
+            <PlayerCard />
+          </Suspense>
         </div>
       </div>
     </>
