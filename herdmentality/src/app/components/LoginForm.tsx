@@ -26,7 +26,7 @@ export default function LoginForm() {
             type='text' 
             name='username' 
             required 
-            className='input input-bordered w-full max-w-4xl h-fit py-4 text-[12vh] leading-none text-center text-accent-content' 
+            className='input input-bordered w-full max-w-[50vw] h-fit py-4 text-[12vh] leading-none text-center text-accent-content' 
             maxLength={9}
           />
           <button 
